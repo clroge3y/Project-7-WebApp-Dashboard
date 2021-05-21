@@ -1,5 +1,5 @@
 const alertContainer = document.querySelector('.alert-container');
-const alert = document.querySelector('.btn-alert-x');
+const alert = document.querySelector('.btn-alert');
 const dot = document.querySelector('.dot');
 const bell = document.querySelector('.header-icon');
 const messageFieldsHeight = document.querySelector('.message-fields').clientHeight;
@@ -49,3 +49,23 @@ userFields.addEventListener('submit', (e) => {
     window.alert('Your message has been delivered.');
   }
 });
+
+function myFunction() {
+  // Declare variables
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById('myInput');
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myUL");
+  li = ul.getElementsByTagName('li');
+
+  // Loop through all list items, and hide those who don't match the search query
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
