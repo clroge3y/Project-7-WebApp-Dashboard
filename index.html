@@ -16,6 +16,7 @@
     <div class="container">
 
       <!-- Header Section -->
+
       <header>
         <h1>WebApp<sup>TM</sup></h1>
         <div class="user">
@@ -55,7 +56,7 @@
           </div>
           <div class="alert-container">
             <div class="alert">
-              <p><strong>Alert</strong> - This is your alert message!</p>
+              <p><strong>Alert</strong> - You have 4 recent notifications!</p>
               <button class="btn-alert">&times;</button>
             </div>
           </div>
@@ -64,20 +65,20 @@
         <!-- Traffic Section -->
         <div class="traffic widget">
           <h3>web traffic</h3>
-          <ul class="time-frame">
+          <div class="time-frame">
             <div class="hourly">
-              <h4>hourly</h4>
+              <h3>hourly</h3>
             </div>
             <div class="daily">
-              <h4>daily</h4>
+              <h3>daily</h3>
             </div>
             <div class="weekly">
-              <h4>weekly</h4>
+              <h3>weekly</h3>
             </div>
             <div class="monthly">
-              <h4>monthly</h4>
+              <h3>monthly</h3>
             </div>
-          </ul>
+          </div>
           <canvas id="traffic"></canvas>
         </div>
 
@@ -137,58 +138,50 @@
         <div class="new-members widget">
           <a id="members"></a>
           <h3>new members</h3>
-          <div class="member-card"><!-- Member 1 -->
-            <img class="profile-pic" src="images/member-1.jpg" alt="member1 profile pic">
-            <div class="member-info">
-              <div class="name-address">
-                <h4>victoria chambers</h4>
-                <p>victoria.chambers80@example.com</p>
-              </div>
-              <div class="member-date">
-                <h4>10/15/15</h4>
+          <div class="activity-card"><!-- Member 1 -->
+            <div class="activity-info">
+              <img class="profile-pic" src="images/member-1.jpg" alt="member1 profile pic">
+              <div class="comment-time">
+                <p>Victoria Chambers</p>
+                <p class="time">victoria.chambers80@example.com</p>
               </div>
             </div>
+            <h4 class="right-angle">10/15/15</h4>
           </div>
           <hr>
-          <div class="member-card"><!-- Member 2 -->
-            <img class="profile-pic" src="images/member-2.jpg" alt="member1 profile pic">
-            <div class="member-info">
-              <div class="name-address">
-                <h4>dale byrd</h4>
-                <p>dale.byrd52@example.com</p>
-              </div>
-              <div class="member-date">
-                <h4>10/15/15</h4>
+          <div class="activity-card"><!-- Member 2 -->
+            <div class="activity-info">
+              <img class="profile-pic" src="images/member-2.jpg" alt="member2 profile pic">
+              <div class="comment-time">
+                <p>Dale Byrd</p>
+                <p class="time">dale.byrd52@example.com</p>
               </div>
             </div>
+            <h4 class="right-angle">10/15/15</h4>
           </div>
           <hr>
-          <div class="member-card"><!-- Member 3 -->
-            <img class="profile-pic" src="images/member-3.jpg" alt="member1 profile pic">
-            <div class="member-info">
-              <div class="name-address">
-                <h4>dawn wood</h4>
-                <p>dawnwood16@example.com</p>
-              </div>
-              <div class="member-date">
-                <h4>10/15/15</h4>
+          <div class="activity-card"><!-- Member 2 -->
+            <div class="activity-info">
+              <img class="profile-pic" src="images/member-2.jpg" alt="member2 profile pic">
+              <div class="comment-time">
+                <p>Dawn Wood</p>
+                <p class="time">dawnwood16@example.com</p>
               </div>
             </div>
+            <h4 class="right-angle">10/15/15</h4>
           </div>
           <hr>
-          <div class="member-card"><!-- Member 4 -->
-            <img class="profile-pic" src="images/member-4.jpg" alt="member1 profile pic">
-            <div class="member-info">
-              <div class="name-address">
-                <h4>dan oliver</h4>
-                <p>danoliver82@example.com</p>
-              </div>
-              <div class="member-date">
-                <h4>10/15/15</h4>
+          <div class="activity-card"><!-- Member 2 -->
+            <div class="activity-info">
+              <img class="profile-pic" src="images/member-2.jpg" alt="member2 profile pic">
+              <div class="comment-time">
+                <p>Dan Oliver</p>
+                <p class="time">danoliver82@example.com</p>
               </div>
             </div>
+            <h4 class="right-angle">10/15/15</h4>
           </div>
-        </div>
+          </div>
 
         <!-- Recent Activity Section -->
         <div class="recent-activity widget">
@@ -243,7 +236,7 @@
           <h3>message user</h3>
           <!-- <div class="user-fields"> -->
             <form class="user-fields">
-              <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for User">
+              <input class="user-search" name="user-search" type="search" placeholder="Search for User">
               <textarea class="user-message" name="user_message" placeholder="Message for User"></textarea>
               <button class="message-user-send" name="message-user-send" type="submit" value="submit">send</button>
             </form>
