@@ -115,7 +115,7 @@ background-color: #7477bf;
 color: #fff;
 padding: 0 0 1rem;
 display: flex;
-flex-direction: column;
+flex-direction: row;
 justify-content: space-between;
 align-items: center;
 }
@@ -125,8 +125,8 @@ font-size: .5rem;
 }
 
 .bell-icon {
-width: 20px;
-height: 20px;
+width: 30px;
+height: 30px;
 margin: 5px 0;
 transition: width .3s, height .3s;
 }
@@ -137,8 +137,8 @@ height: 30px;
 }
 
 .notifications {
-width: 7px;
-height: 7px;
+width: 10px;
+height: 10px;
 border-radius: 50%;
 background: #2ecc71;
 padding: 0;
@@ -163,6 +163,55 @@ margin-left: 20px;
 margin: 0;
 }
 
+.dropbtn {
+    position: relative;
+    cursor: pointer;
+    color: white;
+    border-radius: 50%;
+    background-color: green;
+    padding: 5px 10px;
+    right: 15px;
+    top: -7px;
+
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: lightgreen;
+
+}
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown-content {
+    z-index: 100;
+    padding: 1em;
+    display: none;
+    font-weight: 600;
+    position: absolute;
+
+  }
+
+  .dropdown-content a {
+      color: white;
+      display: block;
+      padding: 10px 15px;
+      border-radius: 30%;
+  }
+
+  .dropdown:hover .dropdown-content {
+    background: gray;
+    display: block;
+
+  }
+
+
+  .dropdown a:hover {
+      background-color: lavendar;
+
+  }
+
 /* Navigation Styles -----------------------------*/
 
 nav {
@@ -171,7 +220,7 @@ background-color: #4d4c72;
 display: flex;
 justify-content: space-evenly;
 align-items: baseline;
-padding: 0;
+padding: 5px;
 }
 
 nav div {
@@ -180,9 +229,7 @@ margin: 0;
 border: 5px solid #4d4c72;
 }
 
-.active {
-border-bottom: 5px solid #2ecc71;
-}
+
 
 /* Main Styles -----------------------------*/
 
@@ -260,10 +307,7 @@ color: silver;
 opacity: 1; /* Search placeholder text for Firefox */
 }
 
-.alert-container {
-margin: 0;
-padding: 0;
-}
+
 
 .alert {
 display: flex;
@@ -271,8 +315,8 @@ justify-content: space-between;
 align-items: center;
 background-color: #7477bf;
 color: #fbfbfb;
-margin: 20px;
-padding: 1rem 5px;
+margin: 0;
+padding: 2px;
 border-radius: 5px;
 }
 
@@ -467,10 +511,6 @@ font-size: .75rem;
 margin: 0 1rem;
 }
 
-.date {
-  text-align: right;
-}
-
 /* Message user widget -------------------------------------------*/
 
 .message-user {
@@ -485,7 +525,7 @@ align-items: center;
 margin: 20px;
 }
 
-#member-choice,
+.user-search,
 .user-message {
 width: 100%;
 margin: 10px;
@@ -689,6 +729,103 @@ border-radius: 5px;
 /* Media Queries -------------------------------- */
 
 @media (min-width: 768px) {
+  .container {
+    grid-template-columns: auto minmax(344px, 944px) minmax(344px, 944px);
+    grid-template-areas:
+      "header header header"
+      "nav main main";
+  }
+
+
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0;
+  }
+
+  .user {
+    margin-right: 2rem;
+  }
+  nav {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  nav div {
+    padding: 20px;
+  }
+  main {
+    grid-template-areas:
+    "dashboard dashboard"
+    "traffic traffic"
+    "daily-traffic mobile-users"
+    "social-stats social-stats"
+    "new-members new-members"
+    "recent-activity recent-activity"
+    "message-user message-user"
+    "settings settings";
+  }
+
+  .db-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .dashboard-search-bg {
+    justify-content: flex-end;
+    align-items: center;
+    border: 1px solid lightgray;
+    border-top: none;
+    border-right: none;
+    margin: 0;
+    padding: 5px 20px;
+    width: 80%;
+  }
+  .dashboard-search {
+    width: 70%;
+  }
+  .alert-container {
+    width: 100%;
+  }
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .social-card {
+    margin: 0 10px 10px 10px;
+    padding: .5rem 5px;
+  }
+  .social-icon {
+    width: 50px;
+    height: 50px;
+  }
+  .soc-icon {
+    width: 23px;
+    height: 23px;
+  }
+  .social-results h3 {
+    margin: 0 0 .25rem .75rem;
+    font-size: .75rem;
+  }
+  .social-results p {
+    margin-left: .75rem;
+    font-size: 1.7rem;
+  }
+  p,
+  img,
+  .activity-info p,
+  .activity-info p.time,
+  .right-angle {
+    margin: 0 .5rem;
+  }
+}
+
+@media (min-width: 1024px) {
 .container {
   grid-template-columns: 75px 1fr;
   grid-template-areas:
@@ -724,12 +861,6 @@ header {
 .user {
   margin-right: 2rem;
 }
-nav {
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
-
 
 .db-container {
   display: flex;
@@ -748,7 +879,6 @@ nav {
   width: 80%;
 }
 
-
 .traffic {
   flex-direction: row;
   justify-content: space-between;
@@ -766,7 +896,6 @@ nav {
   padding: .5rem 5px;
 }
 
-
 .social-results h3 {
   margin: 0 0 .25rem .75rem;
   font-size: .75rem;
@@ -781,32 +910,5 @@ img,
 .activity-info p.time,
 .right-angle {
   margin: 0 .5rem;
-}
-.member-info h4 {
-  margin: 0 0 .25rem .9rem;
-}
-.member-info p {
-  margin: 0 0 0 .9rem;
-}
-.message-user {
-  border-bottom: none;
-}
-.user-fields {
-  justify-content: space-between;
-}
-.user-fields,
-.message-fields,
-.buttons {
-  padding: 0;
-}
-.user-fields,
-.message-fields {
-  margin-left: 15px;
-  margin-right: 15px;
-}
-.message-user button,
-.settings button,
-.buttons {
-  margin-bottom: 0;
 }
 }

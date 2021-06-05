@@ -1,25 +1,28 @@
-const alertContainer = document.querySelector('.alert-container');
-const alert = document.querySelector('.btn-alert');
-const dot = document.querySelector('.notifications');
-const bell = document.querySelector('.bell-icon');
 const messageFieldsHeight = document.querySelector('.message-fields').clientHeight;
 const userFields = document.querySelector('.user-fields');
 const dashboardSearch = document.querySelector('.dashboard-search');
 const magBG = document.querySelector('.mag-bg');
 const userSearch = document.querySelector('.user-search');
 const userMessage = document.querySelector('.user-message');
+const alertBanner = document.querySelector(".alert");
+const bellIcon = document.querySelector(".bell-icon");
+const notifications = document.querySelector("#myDropdown");
 
-
-// Removes the alert when "X" is clicked
-alert.addEventListener('click', () => {
-  alertContainer.innerHTML = "";
-  dot.style.display = "none";
-});
-
-// Displays pop-up windows
-bell.addEventListener('click', () => {
-  window.alert("Please read the alert in the banner below.");
-  window.alert("When you're done, click the X to close the alert.");
+//Creates and closes alert banner
+alertBanner.innerHTML =
+`
+<div class="alert-container">
+  <div class="alert">
+    <p><strong>Alert</strong> - You have unread messages.</p>
+    <button class="btn-alert">&times;</button>
+  </div>
+</div>
+`
+alertBanner.addEventListener('click', e => {
+    const element = e.target;
+    if (element.classList.contains("btn-alert")) {
+    alertBanner.style.display = "none"
+    }
 });
 
 // Creates box shadow on dashboard-search:focus

@@ -18,22 +18,30 @@
       <!-- Header Section -->
 
       <header>
-        <h1>WebApp<sup>TM</sup></h1>
-        <div class="user">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -10 30 40" class="bell-icon">
-                 <path fill="#fff" d="M24 18v-8c0-5.5-4.5-10-10-10S4 4.5 4 10v8l-4 8h9.1c.5 2.3 2.5 4 4.9 4 2.4 0 4.4-1.7 4.9-4H28zM14 28c-1.3 0-2.4-.8-2.8-2h5.6c-.4 1.2-1.5 2-2.8 2zM3 24l3-6v-8c0-4.4 3.6-8 8-8s8 3.6 8 8v8l3 6z"/>
-         </svg>
-          <div class="notifications"></div>
-          <div class="user-avatar">
-            <img class="profile" src="images/tina-profile.jpg" alt="Tina Henson profile picture">
-            <p class="user-name">Tina Henson</p>
-          </div>
-        </div>
-      </header>
+              <h1>WebApp<sup>TM</sup></h1>
+              <div class="user">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -10 30 40" class="bell-icon">
+                       <path fill="#fff" d="M24 18v-8c0-5.5-4.5-10-10-10S4 4.5 4 10v8l-4 8h9.1c.5 2.3 2.5 4 4.9 4 2.4 0 4.4-1.7 4.9-4H28zM14 28c-1.3 0-2.4-.8-2.8-2h5.6c-.4 1.2-1.5 2-2.8 2zM3 24l3-6v-8c0-4.4 3.6-8 8-8s8 3.6 8 8v8l3 6z"/>
+               </svg>
+                  <div class="dropdown">
+                      <button class="dropbtn">4</button>
+                      <div id="myDropdown" class="dropdown-content  hidden show">
+                        <a href="#members">Victoria Chambers commented on YourApp's SEO Tips.</a>
+                        <a href="#members">Dale Byrd likes the post Facebook's changes for 2018.</a>
+                        <a href="#members">Dawn Wood commented on Facebook's changes for 2018</a>
+                        <a href="#members">Dan Oliver posted on YourApp's SEO Tips</a>
+                      </div>
+                    </div>
+                <div class="user-avatar">
+                  <img class="profile" src="images/tina-profile.jpg" alt="Tina Henson profile picture">
+                  <p class="user-name">Tina Henson</p>
+                </div>
+              </div>
+            </header>
 
       <!-- Navigation Section -->
       <nav>
-        <div class="active"><a href="#top"><img class="nav-icon" src="svgs/home.svg" alt="home icon"></a></div>
+        <div><a href="#top"><img class="nav-icon" src="svgs/home.svg" alt="home icon"></a></div>
         <div><a href="#members"><img class="nav-icon" src="svgs/members.svg" alt="members link"></a></div>
         <div><a href="#bar"><img class="nav-icon" src="svgs/bar-chart.svg" alt="bar chart"></a></div>
         <div><a href="#settings"><img class="nav-icon" src="svgs/settings.svg" alt="settings"></a></div>
@@ -54,11 +62,10 @@
               </div>
             </div>
           </div>
-          <div class="alert-container">
-            <div class="alert">
-              <p><strong>Alert</strong> - You have 4 recent notifications!</p>
-              <button class="btn-alert">&times;</button>
-            </div>
+          <!-- alert banner -->
+          <div class="alert" id="alert" >
+
+          <!-- JS will insert alert here -->
           </div>
         </div>
 
